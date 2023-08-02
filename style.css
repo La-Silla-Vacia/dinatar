@@ -121,7 +121,7 @@
   padding-bottom: 16px !important;
 }
 
-.dinatar-profile .profile-name {
+.dinatar-profile .profile-name .name{
   margin-top: 10px !important;
   font-weight: bold !important;
   cursor: pointer !important;
@@ -130,7 +130,7 @@
   padding: 10px 16px !important;
 }
 
-.dinatar-profile .profile-action{
+.dinatar-profile .profile-action span{
   padding: 16px !important;
   display: flex !important;
   flex-direction: column !important;
