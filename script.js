@@ -152,18 +152,21 @@ const buildProfile = (item, colors) => {
   const profileContentImage = document.createElement("div");
   const profileImage = document.createElement("img");
   const profileName = document.createElement("div");
+  const profileNameSpan = document.createElement("span");
   const profileAction = document.createElement("div");
 
   profileAction.style = getColorByTeam(item.Partido, colors);
   profileAction.className = "profile-action";
   profileAction.innerHTML = `<span>${item["Cargo que busca"]}</span> <span>${item.Partido}</span>`;
   profileName.className = "profile-name";
-  profileName.innerHTML = `<span class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</span>`
+  profileNameSpan.innerText = `${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}`
   profileImage.src = item.Foto;
   profileContentImage.className = "profile-image";
   profileContent.className = "profile-content";
   profile.className = "dinatar-profile";
+  profileNameSpan.className= 'name'
 
+  profileName.append(profileNameSpan)
   profileContentImage.append(profileImage);
   profileContent.append(profileContentImage);
   profileContent.append(profileName);
