@@ -129,9 +129,12 @@
   font-family: "Manrope", sans-serif !important;
   padding: 10px 16px !important;
 }
+.dinatar-profile .profile-action{
+  padding: 16px !important;
+  /* background-color: rgb(250, 0, 185) !important; */
+}
 
 .dinatar-profile .profile-action span{
-  padding: 16px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
@@ -141,7 +144,6 @@
   text-transform: uppercase !important;
   color: #FFF !important;
   font-size: 28px !important;
-  line-height: 1 !important;
-  background-color: rgb(250, 0, 185) !important;
+  line-height: 0.9 !important;
   width: 167px !important;
 }

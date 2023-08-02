@@ -158,7 +158,7 @@ const buildProfile = (item, colors) => {
   profileAction.className = "profile-action";
   profileAction.innerHTML = `<span>${item["Cargo que busca"]}</span> <span>${item.Partido}</span>`;
   profileName.className = "profile-name";
-  profileName.innerText = `<span class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</span>`
+  profileName.innerHTML = `<span class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</span>`
   profileImage.src = item.Foto;
   profileContentImage.className = "profile-image";
   profileContent.className = "profile-content";
