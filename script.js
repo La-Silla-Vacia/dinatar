@@ -146,8 +146,9 @@ const getColorByTeam = (team, colors) => {
   }
 };
 
-const buildProfile = (item, colors) => {
-  const profile = document.createElement("div");
+const buildProfile= (i,item, colors) => {
+  const profile = document.createElement("a");
+  profile.href = "#profile_"+i
   const profileContent = document.createElement("div");
   const profileContentImage = document.createElement("div");
   const profileImage = document.createElement("img");
@@ -178,12 +179,14 @@ const buildProfile = (item, colors) => {
 
 const createProfiles = (filters, data, colors, step_count = true) => {
   const dinatar = document.getElementById("dinatar");
+
   const containerProfiles =
     document.getElementById("dinatar-container-profiles") ||
     document.createElement("div");
   containerProfiles.innerHTML = "";
 
-  data.forEach((item) => {
+  data.forEach((item, i) => {
+    const modal =  document.createElement("div");
     const allsCollections = Object.keys(filters).filter((element) => {
       const { value } = filters[element];
       if (value != "Todos") {
@@ -201,8 +204,36 @@ const createProfiles = (filters, data, colors, step_count = true) => {
     });
 
     if (allsCollections.length == count) {
-      containerProfiles.append(buildProfile(item, colors));
+      containerProfiles.append(buildProfile(i,item, colors));
     }
+
+    console.log(item)
+    modal.id = "profile_"+i
+    modal.className = "dinatar-popup"
+    modal.innerHTML = `
+      <div class="dinatar-container">
+        <div class="dinatar__content">
+          <div class="header">
+            <div class="image">
+              <img src="${item["Foto"]}" alt="">
+            </div>
+            <div class="info">
+              <h2 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h2>
+              <div class="work">${item['Cargo que busca']}</div>
+              <div class="city">${item['Ciudad']}</div>
+              <div class="coavales">
+                <strong>Coavales: </strong> ${item['Coavales']}
+              </div>
+            </div>
+          </div>
+          <p class="dinatar__text">
+            ${item['Perfil']}
+          </p>
+          <a href="#" class="dinatar-button-close">X</a>
+        </div>
+      </div>
+    `
+    dinatar.append(modal)
   });
   containerProfiles.id = "dinatar-container-profiles";
   dinatar.appendChild(containerProfiles);

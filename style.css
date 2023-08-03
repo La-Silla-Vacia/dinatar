@@ -33,7 +33,6 @@ body {
 #select-dinatar {
   /* Reset #select-dinatar */
   appearance: none;
-  outline: 10px red;
   border: 1px solid #44a5db;
   box-shadow: none;
   /* Personalize */
@@ -147,6 +146,12 @@ body {
   /* background-color: rgb(250, 0, 185) !important; */
 }
 
+a:not([href^="https://"])
+{
+  text-decoration: unset;
+  color: unset;
+}
+
 .dinatar-profile .profile-action button {
   padding: 16px !important;
   width: 100%;
@@ -221,4 +226,130 @@ body {
   .dinatar-profile {
     width: 31%;
   }
+}
+
+.some-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.pure {
+  color: #e75480;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.dinatar-button-close {
+  background-color: #44a5db;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 100%;
+  margin-top: 25px;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+  font-family: "Manrope";
+  color: #fff !important;
+}
+
+.dinatar-popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(black, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+/* .dinatar-popup .dinatar-container{
+      position: relative;
+    } */
+
+.dinatar-popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dinatar__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2rem 4rem rgba(black, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dinatar__text {
+  margin: 16px 0px 0px;
+  letter-spacing: 0.00938em;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.dinatar__content .header {
+  display: flex;
+  gap: 10px;
+}
+
+.dinatar__content .header .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dinatar__content .header .image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.dinatar__content .header .info .name {
+  margin: 0px;
+  letter-spacing: 0em;
+  font-size: 40px;
+  font-weight: 400;
+  color: rgb(61, 61, 61);
+  font-family: Martin;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.dinatar__content .header .info .work,
+.city {
+  margin: 4px 0px 0px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Manrope;
+}
+
+.dinatar__content .header .info .coavales {
+  margin: 4px 0px 0px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Manrope;
 }
