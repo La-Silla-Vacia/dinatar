@@ -25,6 +25,36 @@
   justify-content: flex-end;
 }
 
+@media screen and (max-width: 420px) {
+  .filter-container {
+    width: 196px;
+  }
+}
+
+@media screen and (max-width: 419px) {
+  .filter-container {
+    width: 188px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .filter-container {
+    width: 182px;
+  }
+}
+
+@media screen and (max-width: 389px) {
+  .filter-container {
+    width: 156px;
+  }
+}
+
+@media screen and (max-width: 339px) {
+  .filter-container {
+    width: 100%;
+  }
+}
+
 #select-dinatar {
   /* Reset #select-dinatar */
   appearance: none;
@@ -106,6 +136,32 @@
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 419px) {
+  .dinatar-profile {
+    width: 188px;
+  }
+
+  .dinatar-profile .profile-action {
+    width: 156px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .dinatar-profile {
+    width: 100%;
+  }
+
+  .dinatar-profile .profile-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 339px) {
+  .dinatar-profile {
+    width: 100%;
+  }
+}
+
 .dinatar-profile .profile-image{
   width: 100%;
   display: flex;
@@ -134,13 +190,26 @@
 }
 .dinatar-profile .profile-action{
   padding: 16px !important;
-  /* background-color: rgb(250, 0, 185) !important; */
-}
-
-.dinatar-profile .profile-action span{
+  width: 167px ;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
+  /* background-color: rgb(250, 0, 185) !important; */
+}
+
+@media screen and (max-width: 390px) {
+  .dinatar-profile .profile-action {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 339px) {
+  .dinatar-profile .profile-action {
+    width: 90% !important;
+  }
+}
+
+.dinatar-profile .profile-action span{
   font-family: 'Martin' !important;
   font-weight: 500 !important;
   letter-spacing: 0.02857em !important;
@@ -148,5 +217,4 @@
   color: #FFF !important;
   font-size: 28px !important;
   line-height: 0.9 !important;
-  width: 167px !important;
 }
