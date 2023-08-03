@@ -158,7 +158,7 @@ const buildProfile= (i,item, colors) => {
 
   profileAction.style = getColorByTeam(item.Partido, colors);
   profileAction.className = "profile-action";
-  profileAction.innerHTML = `<button><span>${item["Cargo que busca"]}</span> <span>${item.Partido}</span></button>`;
+  profileAction.innerHTML = `<button><strong>${item["Cargo que busca"]}</strong> <strong>${item.Partido}</strong></button>`;
   profileName.className = "profile-name";
   profileNameSpan.innerText = `${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}`
   profileImage.src = item.Foto;
@@ -221,7 +221,7 @@ const createProfiles = (filters, data, colors, step_count = true) => {
                 <h3 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h3>
               </div>
               <div class="dinatar-button-close-container">
-                <a href="#close" class="dinatar-button-close">X</a>
+                <a href="#close" class="dinatar-button-close"></a>
               </div>
           </div>
           </div>

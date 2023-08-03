@@ -112,15 +112,15 @@ body {
 }
 
 .dinatar-profile .profile-image {
-  /* width: 100%; */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .dinatar-profile .profile-image img {
-  /* width: 100px !important; */
-  height: 100px !important;
+  width: 100px !important;
+  /* height: 100px !important; */
   border-radius: 50% !important;
   padding-top: 16px !important;
   padding-bottom: 16px !important;
@@ -168,11 +168,11 @@ a:not([href^="https://"])
   gap: 7px;
 }
 
-.dinatar-profile .profile-action span {
+.dinatar-profile .profile-action strong {
   font-family: "Manrope" !important;
   font-weight: 700 !important;
   letter-spacing: 0.02857em !important;
-  text-transform: uppercase !important;
+  /* text-transform: uppercase !important; */
   color: #fff !important;
   font-size: 18px !important;
   line-height: normal !important;
@@ -189,7 +189,7 @@ a:not([href^="https://"])
     width: 48%;
   }
 
-  .dinatar__content{
+  .dinatar__content {
     width: 75% !important;
     /* left: 0; */
   }
@@ -198,10 +198,10 @@ a:not([href^="https://"])
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
   .dinatar__content {
-    top: 10% !important; 
+    top: 10% !important;
   }
 
-  .dinatar-button-close-container .dinatar-button-close{
+  .dinatar-button-close-container .dinatar-button-close {
     right: 9% !important;
     top: 14% !important;
   }
@@ -248,7 +248,7 @@ a:not([href^="https://"])
   }
 }
 
-.dinatar-button-close-container{
+.dinatar-button-close-container {
   position: relative;
 }
 
@@ -270,6 +270,11 @@ a:not([href^="https://"])
   margin: 0;
 }
 
+.dinatar-button-close-container .dinatar-button-close:after{
+  display: inline-block;
+  content: "\00d7"; /* This will render the 'X' */
+}
+
 .dinatar-popup {
   height: 100vh;
   width: 100%;
@@ -284,16 +289,16 @@ a:not([href^="https://"])
   transition: all 0.3s;
 }
 
-.dinatar-popup:target  {
+.dinatar-popup:target {
   opacity: 1;
   visibility: visible;
 }
 
 .dinatar__content {
   position: absolute;
-  top: 2%; 
-  left: 0; 
-  right: 0; 
+  top: 2%;
+  left: 0;
+  right: 0;
   margin: auto;
   width: 85%;
   max-width: 560px;
@@ -333,7 +338,7 @@ a:not([href^="https://"])
   width: 100px;
 }
 
-.dinatar__content .header .info{
+.dinatar__content .header .info {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -350,7 +355,7 @@ a:not([href^="https://"])
   text-transform: uppercase;
 }
 
-.dinatar__content .another-info{
+.dinatar__content .another-info {
   margin-top: 20px;
 }
 
