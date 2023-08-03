@@ -203,7 +203,7 @@
 
 @media screen and (max-width: 400px) {
   .dinatar-profile .profile-action {
-    width: 92% !important;
+    width: 100% !important;
   }
 }
 
