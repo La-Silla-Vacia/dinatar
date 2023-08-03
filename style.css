@@ -37,9 +37,9 @@
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 390px) { 
   .filter-container {
-    width: 172px;
+    width: 170px;
   }
 }
 
