@@ -218,7 +218,7 @@ const createProfiles = (filters, data, colors, step_count = true) => {
               <img src="${item["Foto"]}" alt="">
             </div>
             <div class="info">
-              <h2 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h2>
+              <h3 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h3>
               <div class="work">${item['Cargo que busca']}</div>
               <div class="city">${item['Ciudad']}</div>
               <div class="coavales">
