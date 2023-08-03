@@ -130,12 +130,17 @@ body {
   margin-top: 10px !important;
   cursor: pointer !important;
   padding: 10px 16px !important;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .dinatar-profile .profile-name .name {
   font-weight: bold !important;
   font-size: 18px !important;
   font-family: "Manrope", sans-serif !important;
+  text-align: start;
+  color: #3d3d3d;
 }
 
 .dinatar-profile .profile-action {
@@ -160,16 +165,17 @@ a:not([href^="https://"])
   align-items: flex-start;
   background-color: inherit;
   border: 0;
+  gap: 7px;
 }
 
 .dinatar-profile .profile-action span {
-  font-family: "Martin" !important;
-  font-weight: 500 !important;
+  font-family: "Manrope" !important;
+  font-weight: 700 !important;
   letter-spacing: 0.02857em !important;
   text-transform: uppercase !important;
   color: #fff !important;
-  font-size: 28px !important;
-  line-height: 0.9 !important;
+  font-size: 18px !important;
+  line-height: normal !important;
   text-align: start;
 }
 
@@ -182,12 +188,17 @@ a:not([href^="https://"])
   .dinatar-profile {
     width: 48%;
   }
+
+  .dinatar__content{
+    width: 75% !important;
+    /* left: 0; */
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
   .dinatar__content {
-    top: 15% !important; 
+    top: 10% !important; 
   }
 
   .dinatar-button-close-container .dinatar-button-close{
@@ -239,13 +250,10 @@ a:not([href^="https://"])
 
 .dinatar-button-close-container{
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 .dinatar-button-close-container .dinatar-button-close {
   background-color: #44a5db;
-  /* Green */
   border: none;
   color: white;
   padding: 8px 15px;
@@ -255,15 +263,11 @@ a:not([href^="https://"])
   font-size: 16px;
   border-radius: 100%;
   margin-top: 25px;
-  /* position: absolute;
-  margin: 0;
-  top: 0;
-  right: 0; */
   font-family: "Manrope";
   color: #fff !important;
-  position: fixed;
-  right: 8%;
-  top: 0;
+  width: 8px;
+  height: 23px;
+  margin: 0;
 }
 
 .dinatar-popup {
@@ -290,9 +294,9 @@ a:not([href^="https://"])
   top: 2%; 
   left: 0; 
   right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
+  margin: auto;
   width: 85%;
+  max-width: 560px;
   padding: 20px;
   background-color: white;
   box-shadow: 0 2rem 4rem rgba(black, 0.2);
@@ -321,12 +325,18 @@ a:not([href^="https://"])
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100px;
 }
 
 .dinatar__content .header .image img {
+  border-radius: 50%;
   width: 100px;
-  height: 100px;
-  border-radius: 100%;
+}
+
+.dinatar__content .header .info{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .dinatar__content .header .info .name {
@@ -340,7 +350,11 @@ a:not([href^="https://"])
   text-transform: uppercase;
 }
 
-.dinatar__content .header .info .work,
+.dinatar__content .another-info{
+  margin-top: 20px;
+}
+
+.dinatar__content .another-info .work,
 .city {
   margin: 4px 0px 0px;
   font-size: 18px;
@@ -348,7 +362,7 @@ a:not([href^="https://"])
   font-family: Manrope;
 }
 
-.dinatar__content .header .info .coavales {
+.dinatar__content .another-info .coavales {
   margin: 4px 0px 0px;
   font-size: 18px;
   font-weight: 400;

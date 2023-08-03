@@ -217,20 +217,24 @@ const createProfiles = (filters, data, colors, step_count = true) => {
               <img src="${item["Foto"]}" alt="">
             </div>
             <div class="info">
-              <h3 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h3>
-              <div class="work">${item['Cargo que busca']}</div>
-              <div class="city">${item['Ciudad']}</div>
-              <div class="coavales">
-                <strong>Coavales: </strong> ${item['Coavales']}
+              <div>
+                <h3 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h3>
               </div>
+              <div class="dinatar-button-close-container">
+                <a href="#close" class="dinatar-button-close">X</a>
+              </div>
+          </div>
+          </div>
+          <div class="another-info">
+            <div class="work">${item['Cargo que busca']}</div>
+            <div class="city">${item['Ciudad']}</div>
+            <div class="coavales">
+              <strong>Coavales: </strong> ${item['Coavales']}
             </div>
           </div>
           <p class="dinatar__text">
             ${item['Perfil']}
           </p>
-          <div class="dinatar-button-close-container">
-            <a href="#close" class="dinatar-button-close">X</a>
-          </div>
         </div>
       </div>
     `
