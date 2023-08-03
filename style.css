@@ -187,12 +187,12 @@ a:not([href^="https://"])
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
   .dinatar__content {
-    top: 15%; 
+    top: 15% !important; 
   }
 
   .dinatar-button-close-container .dinatar-button-close{
-    right: 9%;
-    top: 14%;
+    right: 9% !important;
+    top: 14% !important;
   }
 
   .filter-container {
@@ -235,23 +235,6 @@ a:not([href^="https://"])
   .dinatar-profile {
     width: 31%;
   }
-}
-
-.some-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 800px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 24px;
-}
-
-.pure {
-  color: #e75480;
-  text-decoration: underline;
-  font-weight: 600;
 }
 
 .dinatar-button-close-container{
@@ -297,15 +280,14 @@ a:not([href^="https://"])
   transition: all 0.3s;
 }
 
-/* .dinatar-popup .dinatar-container{
-      position: relative;
-    } */
-
-.dinatar-popup:target {
+.dinatar-popup:target  {
   opacity: 1;
   visibility: visible;
 }
 
+/* .dinatar-popup .dinatar-container{
+      position: relative;
+    } */
 .dinatar__content {
   position: absolute;
   top: 2%; 
