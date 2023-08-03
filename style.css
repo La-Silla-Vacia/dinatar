@@ -245,7 +245,13 @@ a:not([href^="https://"])
   font-weight: 600;
 }
 
-.dinatar-button-close {
+.dinatar-button-close-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dinatar-button-close-container .dinatar-button-close {
   background-color: #44a5db;
   /* Green */
   border: none;
@@ -257,12 +263,15 @@ a:not([href^="https://"])
   font-size: 16px;
   border-radius: 100%;
   margin-top: 25px;
-  position: absolute;
+  /* position: absolute;
   margin: 0;
   top: 0;
-  right: 0;
+  right: 0; */
   font-family: "Manrope";
   color: #fff !important;
+  position: fixed;
+  right: 8%;
+  top: 0;
 }
 
 .dinatar-popup {
@@ -290,16 +299,19 @@ a:not([href^="https://"])
 
 .dinatar__content {
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: 10px;
-  /* transform: translate(-50%, -50%); */
+  top: 2%; 
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
   width: 85%;
   padding: 20px;
   background-color: white;
   box-shadow: 0 2rem 4rem rgba(black, 0.2);
   border-radius: 10px;
-  overflow: hidden;
+  max-height: 86vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .dinatar__text {
