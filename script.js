@@ -197,7 +197,6 @@ const createProfiles = (filters, data, colors, step_count = true) => {
     let count = 0;
     allsCollections.forEach((step) => {
       const value = filters[step].value;
-      // console.log(step, query)
       if (item[step] == value) {
         count++;
       }
@@ -207,7 +206,7 @@ const createProfiles = (filters, data, colors, step_count = true) => {
       containerProfiles.append(buildProfile(i,item, colors));
     }
 
-    console.log(item)
+    // console.log(item)
     modal.id = "profile_"+i
     modal.className = "dinatar-popup"
     modal.innerHTML = `
@@ -241,6 +240,14 @@ const createProfiles = (filters, data, colors, step_count = true) => {
   dinatar.appendChild(containerProfiles);
 };
 
+const on_event = (e, filters, data, colors) =>{
+  const select_filter = e.target.getAttribute("filter");
+  const value = e.target.value;
+  filters[select_filter].value = value;
+
+  createProfiles(filters, data, colors);
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   let _colors;
   let only;
@@ -257,6 +264,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     only = [];
   }
   let colors = {};
+
   const res_data = await fetchData(id, name, _colors);
   if(_colors){
     colors = await fetchColors(id);
@@ -269,11 +277,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   createFilters(filters);
   createProfiles(filters, data, colors);
 
-  document.querySelector("#select-dinatar").addEventListener("change", (e) => {
-    const select_filter = e.target.getAttribute("filter");
-    const value = e.target.value;
-    filters[select_filter].value = value;
-
-    createProfiles(filters, data, colors);
+  const targets = document.querySelectorAll("#select-dinatar");
+  targets.forEach(element => {
+    element.addEventListener("change", (e) => {on_event(e, filters, data, colors)})
   });
+
+  // document.querySelector("#select-dinatar").addEventListener("change", (e) => {
+    // const select_filter = e.target.getAttribute("filter");
+    // const value = e.target.value;
+    // filters[select_filter].value = value;
+
+    // createProfiles(filters, data, colors);
+  // });
 });

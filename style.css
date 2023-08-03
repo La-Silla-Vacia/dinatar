@@ -285,9 +285,6 @@ a:not([href^="https://"])
   visibility: visible;
 }
 
-/* .dinatar-popup .dinatar-container{
-      position: relative;
-    } */
 .dinatar__content {
   position: absolute;
   top: 2%; 
