@@ -39,7 +39,7 @@
 
 @media screen and (max-width: 390px) {
   .filter-container {
-    width: 182px;
+    width: 172px;
   }
 }
 
@@ -160,6 +160,10 @@
   .dinatar-profile {
     width: 100%;
   }
+
+  .dinatar-profile .profile-content {
+    width: 100%;
+  }
 }
 
 .dinatar-profile .profile-image{
@@ -197,9 +201,9 @@
   /* background-color: rgb(250, 0, 185) !important; */
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 400px) {
   .dinatar-profile .profile-action {
-    width: 90% !important;
+    width: 92% !important;
   }
 }
 
