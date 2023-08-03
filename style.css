@@ -292,8 +292,9 @@ a:not([href^="https://"])
   position: absolute;
   top: 0;
   left: 0;
+  margin: 10px;
   /* transform: translate(-50%, -50%); */
-  width: 90%;
+  width: 85%;
   padding: 20px;
   background-color: white;
   box-shadow: 0 2rem 4rem rgba(black, 0.2);
