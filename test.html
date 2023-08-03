@@ -1,177 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="dinatar"></div>
+    <script src="https://la-silla-vacia.github.io/dinatar/script.js"></script>
+    <style type="text/css">
+      @import url("https://la-silla-vacia.github.io/dinatar/style.css");
+    </style>
+    <script>
+      const id = "1vXFaxmiPvyv2FbH2gUFmIAKjlwFyyNe9AFdDsewM5xo";
+      const name = "Candidatos";
+      const with_colors = true;
+      const filters_options = [
+        "Posición frente al Gobierno Petro",
+        "Nivel de estudios",
+        "Sector del que viene",
+        "Voto segunda vuelta 2022",
+        "Líos o cuestionamientos",
+        "Ha ocupado un cargo público",
+      ];
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-</head>
-
-<body>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
-
-    @font-face {
-      font-family: "Martin";
-      src: url("https://dinatar.vercel.app/MARTIN.ttf") format("truetype");
-    }
-
-    body {
-      background-color: #4caf50;
-    }
-
-    .some-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 800px;
-      text-align: center;
-      font-weight: 500;
-      font-size: 24px;
-    }
-
-    .pure {
-      color: #e75480;
-      text-decoration: underline;
-      font-weight: 600;
-    }
-
-    .dinatar-button-close {
-      background-color: #4caf50;
-      /* Green */
-      border: none;
-      color: white;
-      padding: 8px 15px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      border-radius: 100%;
-      margin-top: 25px;
-      position: absolute;
-      margin: 0;
-      top: 0;
-      right: 0;
-      font-family: 'Manrope';
-    }
-
-    .dinatar-popup {
-      height: 100vh;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: rgba(black, 0.8);
-      backdrop-filter: blur(10px);
-      z-index: 9999;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s;
-    }
-
-    /* .dinatar-popup .dinatar-container{
-      position: relative;
-    } */
-
-    .dinatar-popup:target {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .dinatar__content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      padding: 20px;
-      background-color: white;
-      box-shadow: 0 2rem 4rem rgba(black, 0.2);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .dinatar__text {
-      margin: 16px 0px 0px;
-      letter-spacing: 0.00938em;
-      font-family: Manrope;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-
-    .dinatar__content .header{
-      display: flex;
-      gap: 10px;
-    }
-
-    .dinatar__content .header .image{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .dinatar__content .header .image img{
-      width: 100px;
-      height: 100px;
-      border-radius: 100%;
-    }
-
-    .dinatar__content .header .info .name{
-      margin: 0px;
-      letter-spacing: 0em;
-      font-size: 40px;
-      font-weight: 400;
-      color: rgb(61, 61, 61);
-      font-family: Martin;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .dinatar__content .header .info .work, .city{
-      margin: 4px 0px 0px;
-      font-size: 18px;
-      font-weight: 700;
-      font-family: Manrope;
-    }
-
-    .dinatar__content .header .info .coavales{
-      margin: 4px 0px 0px;
-      font-size: 18px;
-      font-weight: 400;
-      font-family: Manrope;
-    }
-  </style>
-
-
-  <a class="button" href="#profile">I am a Popup<a />
-
-    <div class="dinatar-popup" id="profile">
-      <div class="dinatar-container">
-        <div class="dinatar__content">
-          <div class="header">
-            <div class="image">
-              <img src="https://www.lasillavacia.com/media/gustavo-bolivar.jpg" alt="">
-            </div>
-            <div class="info">
-              <h2 class="name">Gustavo Bolívar Moreno</h2>
-              <div class="work">Alcaldía</div>
-              <div class="city">Bogotá</div>
-              <div class="coavales">
-                <strong>Coavales: </strong> Pacto Histórico: Polo, UP, Colombia Humana
-              </div>
-            </div>
-          </div>
-          <p class="dinatar__text">
-            Su vida política empezó cuando militó en las juventudes galanistas a finales de los 80. Por esos años, trabajó como asesor de Enrique Parejo, político galanista, cuando era concejal de Bogotá. Bolívar estudió varios semestres de Comunicación Social y Periodismo, pero no se graduó. Se dedicó a escribir telenovelas que han sido exitosas como Sin tetas no hay paraíso, Pandillas Guerra y Paz y El capo. En 2015, ofreció ayuda económica a varios políticos, incluido Gustavo Petro, tras su destitución de la Alcaldía
-          </p>
-          <a href="#" class="dinatar-button-close">X</a>
-        </div>
-      </div>
-    </div>
-
-</body>
-
+      const get_only = ["Ciudad:Bogotá", "Cargo que busca:Alcaldía"];
+    </script>
+  </body>
 </html>

@@ -112,14 +112,14 @@ body {
 }
 
 .dinatar-profile .profile-image {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .dinatar-profile .profile-image img {
-  width: 100px !important;
+  /* width: 100px !important; */
   height: 100px !important;
   border-radius: 50% !important;
   padding-top: 16px !important;
