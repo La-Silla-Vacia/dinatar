@@ -229,8 +229,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     colors = await fetchColors(id);
   }
 
-  console.log(colors)
-
   const data = parseData(res_data, only);
 
   let filters = getFilters(filters_options, data);
@@ -243,6 +241,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const value = e.target.value;
     filters[select_filter].value = value;
 
-    createProfiles(filters, data, colores_por_partido);
+    createProfiles(filters, data, colors);
   });
 });
