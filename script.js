@@ -229,7 +229,7 @@ const createProfiles = (filters, data, colors, step_count = true) => {
             ${item['Perfil']}
           </p>
           <div class="dinatar-button-close-container">
-            <a href="#" class="dinatar-button-close">X</a>
+            <a href="#close" class="dinatar-button-close">X</a>
           </div>
         </div>
       </div>
