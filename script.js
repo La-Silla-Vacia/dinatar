@@ -147,8 +147,9 @@ const getColorByTeam = (team, colors) => {
 };
 
 const buildProfile= (i,item, colors) => {
-  const profile = document.createElement("a");
-  profile.href = "#profile_"+i
+  const profile = document.createElement("div");
+  profile.id = "#profile_"+i
+  profile.onclick = () => openModal(i)
   const profileContent = document.createElement("div");
   const profileContentImage = document.createElement("div");
   const profileImage = document.createElement("img");
@@ -207,7 +208,7 @@ const createProfiles = (filters, data, colors, step_count = true) => {
     }
 
     // console.log(item)
-    modal.id = "profile_"+i
+    modal.id = "modal_profile_"+i
     modal.className = "dinatar-popup"
     modal.innerHTML = `
       <div class="dinatar-container">
@@ -220,9 +221,11 @@ const createProfiles = (filters, data, colors, step_count = true) => {
               <div>
                 <h3 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h3>
               </div>
-              <div class="dinatar-button-close-container">
-                <a href="#close" class="dinatar-button-close"></a>
-              </div>
+              <button onclick="closeModal('modal_profile_${i}')" class="dinatar-button-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+                </svg>
+              </button>
           </div>
           </div>
           <div class="another-info">
@@ -250,6 +253,18 @@ const on_event = (e, filters, data, colors) =>{
   filters[select_filter].value = value;
 
   createProfiles(filters, data, colors);
+}
+
+function openModal(id) {
+  const modal = document.getElementById(`modal_profile_${id}`);
+  modal.classList.add("active");
+  console.log(`modal_profile_${id}`)
+}
+
+function closeModal(id) {
+  console.log(`${id}`)
+  const modal = document.getElementById(id);
+  modal.classList.remove("active");
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
