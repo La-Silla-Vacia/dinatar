@@ -165,6 +165,7 @@ body {
   color: #fff !important;
   font-size: 28px !important;
   line-height: 0.9 !important;
+  text-align: start;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -191,12 +192,33 @@ body {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 992px) {
+  .filter-container {
+    width: 31%;
+  }
+
+  .dinatar-profile {
+    width: 31%;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 1200px) {
+  .filter-container {
+    width: 31%;
+  }
+
+  .dinatar-profile {
+    width: 31%;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+  .filter-container {
+    width: 31%;
+  }
+
+  .dinatar-profile {
+    width: 31%;
+  }
 }
