@@ -157,7 +157,7 @@ const buildProfile = (item, colors) => {
 
   profileAction.style = getColorByTeam(item.Partido, colors);
   profileAction.className = "profile-action";
-  profileAction.innerHTML = `<span>${item["Cargo que busca"]}</span> <span>${item.Partido}</span>`;
+  profileAction.innerHTML = `<button><span>${item["Cargo que busca"]}</span> <span>${item.Partido}</span></button>`;
   profileName.className = "profile-name";
   profileNameSpan.innerText = `${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}`
   profileImage.src = item.Foto;
