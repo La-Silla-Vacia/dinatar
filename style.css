@@ -186,6 +186,15 @@ a:not([href^="https://"])
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 768px) {
+  .dinatar__content {
+    top: 15%; 
+  }
+
+  .dinatar-button-close-container .dinatar-button-close{
+    right: 9%;
+    top: 14%;
+  }
+
   .filter-container {
     width: 31%;
   }
