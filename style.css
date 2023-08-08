@@ -164,7 +164,6 @@ a:not([href^="https://"])
   align-items: flex-start;
   background-color: inherit;
   border: 0;
-  gap: 7px;
 }
 
 .dinatar-profile .profile-action strong {
@@ -279,7 +278,7 @@ a:not([href^="https://"])
 
 .dinatar__content {
   position: absolute;
-  top: 2%;
+  top: 6%;
   left: 0;
   right: 0;
   margin: auto;
@@ -342,8 +341,14 @@ a:not([href^="https://"])
   margin-top: 20px;
 }
 
-.dinatar__content .another-info .work,
-.city {
+.dinatar__content .another-info .work {
+  margin: 4px 0px 0px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Manrope;
+}
+
+.dinatar__content .another-info .city {
   margin: 4px 0px 0px;
   font-size: 18px;
   font-weight: 700;
