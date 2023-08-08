@@ -173,7 +173,7 @@ a:not([href^="https://"])
   /* text-transform: uppercase !important; */
   color: #fff !important;
   font-size: 18px !important;
-  line-height: normal !important;
+  /* line-height: normal !important; */
   text-align: start;
 }
 
