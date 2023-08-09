@@ -5,12 +5,6 @@
   src: url("https://dinatar.vercel.app/MARTIN.ttf") format("truetype");
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
 :root {
   --bg-select-dinatar: #fff;
   --color-select-dinatar: #3d3d3d;
