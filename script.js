@@ -41,7 +41,6 @@ const parseData = (data, only) => {
   new_data.map((item) => {
     let count = 0;
     splitter.forEach(([column, value]) => {
-      console.log(item[column])
       if (item[column]?.includes(value)) {
         count += 1;
       }
