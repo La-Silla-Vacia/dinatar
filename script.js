@@ -209,36 +209,34 @@ const createProfiles = (filters, data, colors, step_count = true) => {
 
     // console.log(item)
     modal.id = "modal_profile_"+i
-    modal.className = "dinatar-popup"
+    modal.className = "dinatar-popup "
     modal.innerHTML = `
-      <div class="dinatar-container">
-        <div class="dinatar__content">
-          <div class="header">
-            <div class="image">
-              <img src="${item["Foto"]}" alt="">
+      <div class="dinatar__content">
+        <div class="header">
+          <div class="image">
+            <img src="${item["Foto"]}" alt="">
+          </div>
+          <div class="info">
+            <div>
+              <h3 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h3>
             </div>
-            <div class="info">
-              <div>
-                <h3 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h3>
-              </div>
-              <button onclick="closeModal('modal_profile_${i}')" class="dinatar-button-close">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
-                </svg>
-              </button>
-          </div>
-          </div>
-          <div class="another-info">
-            <div class="work">${item['Cargo que busca']}</div>
-            <div class="city">${item['Ciudad']}</div>
-            <div class="coavales">
-              <strong>Coavales: </strong> ${item['Coavales']}
-            </div>
-          </div>
-          <p class="dinatar__text">
-            ${item['Perfil']}
-          </p>
+            <button onclick="closeModal('modal_profile_${i}')" class="dinatar-button-close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+              </svg>
+            </button>
         </div>
+        </div>
+        <div class="another-info">
+          <div class="work">${item['Cargo que busca']}</div>
+          <div class="city">${item['Ciudad']}</div>
+          <div class="coavales">
+            <strong>Coavales: </strong> ${item['Coavales']}
+          </div>
+        </div>
+        <p class="dinatar__text">
+          ${item['Perfil']}
+        </p>
       </div>
     `
     dinatar.append(modal)

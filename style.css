@@ -271,21 +271,32 @@ a:not([href^="https://"])
 }
 
 .dinatar__content {
-  position: absolute;
+  /* position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  width: 85%;
+  
   max-width: 560px;
-  padding: 20px;
+  
   background-color: white;
   box-shadow: 0 2rem 4rem rgba(black, 0.2);
-  border-radius: 10px;
+  
   max-height: 86vh;
+  
+  overflow-x: hidden; */
+  width: 85%;
+  max-height: 86vh;
+  border: 1px solid #000;
+  position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+  background: white;
+  color: #3d3d3d;
+  padding: 20px;
   overflow-y: scroll;
-  overflow-x: hidden;
+  border-radius: 10px;
 }
 
 .dinatar__text {
