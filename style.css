@@ -252,11 +252,11 @@ a:not([href^="https://"])
 }
 
 .dinatar-popup {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
   background-color: rgba(black, 0.8);
   backdrop-filter: blur(10px);
   z-index: 9999;

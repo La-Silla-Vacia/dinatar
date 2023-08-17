@@ -229,7 +229,7 @@ const createProfiles = (filters, data, colors, step_count = true) => {
         </div>
         <div class="another-info">
           <div class="work">${item['Cargo que busca']}</div>
-          <div class="city">${item['Ciudad']}</div>
+          <div class="city">${item['Territorio']}</div>
           <div class="coavales">
             <strong>Coavales: </strong> ${item['Coavales']}
           </div>
