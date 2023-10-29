@@ -31,7 +31,7 @@ const parseData = (data, only) => {
     }
   }
 
-  console.log(new_data)
+  // console.log(new_data)
 
   // let new_data = [];
   // values.forEach((items) => {
@@ -76,9 +76,11 @@ const parseColors = (data) => {
 };
 
 const fetchColors = async (id) => {
-  const res_colors = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/Colors?key=AIzaSyBs2hcY3dWMDvLqEPc1Rt1awuEAClMRlsM`
-  );
+  // const res_colors = await fetch(
+  //   `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/Colors?key=AIzaSyBs2hcY3dWMDvLqEPc1Rt1awuEAClMRlsM`
+  // );
+  const res_colors = await fetch(`https://dinatar.gabbler.io/colors/${id}`)
+
 
   const data = await res_colors.json();
 
@@ -86,9 +88,11 @@ const fetchColors = async (id) => {
 };
 
 const fetchData = async (id, name) => {
-  const res_data = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/${name}?key=AIzaSyBs2hcY3dWMDvLqEPc1Rt1awuEAClMRlsM`
-  );
+  // const res_data = await fetch(
+  //   `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/${name}?key=AIzaSyBs2hcY3dWMDvLqEPc1Rt1awuEAClMRlsM`
+  // );
+
+  const res_data = await fetch(`https://dinatar.gabbler.io/sheets/${name}/${id}`)
 
   return await res_data.json();
 };
