@@ -16,20 +16,34 @@ const filterValues = (data) => {
 };
 
 const parseData = (data, only) => {
-  const columns = data.values[0];
-  const values = data.values.slice(1);
+  // const columns = data.values[0];
+  const values = data.values;
 
-  let new_data = [];
-  values.forEach((items) => {
-    let obj = {};
-    items.forEach((value, i) => {
-      if (columns[i].length != 0 && value.length != 0) {
-        // console.log(columns[i], value)
-        obj[columns[i]] = value;
+  var new_data = [];
+
+  for (var i = 1; i < values.length; i++) {
+    new_data[i - 1] = {};
+    for (var k = 0; k < values[0].length && k < values[i].length; k++) {
+      var key = values[0][k];
+      if(key.length != 0){
+        new_data[i - 1][key] = values[i][k];
       }
-    });
-    new_data.push(obj);
-  });
+    }
+  }
+
+  console.log(new_data)
+
+  // let new_data = [];
+  // values.forEach((items) => {
+  //   let obj = {};
+  //   items.forEach((value, i) => {
+  //     if (columns[i].length != 0 && value.length != 0) {
+  //       // console.log(columns[i], value)
+  //       obj[columns[i]] = value;
+  //     }
+  //   });
+  //   new_data.push(obj);
+  // });
 
   let final = [];
 
@@ -53,27 +67,27 @@ const parseData = (data, only) => {
   return final;
 };
 
-const parseColors = (data) =>{
-  let final = []
-  data.values.forEach(item => {
-    final[item[0]] = item[1]
+const parseColors = (data) => {
+  let final = [];
+  data.values.forEach((item) => {
+    final[item[0]] = item[1];
   });
-  return final
-}
+  return final;
+};
 
 const fetchColors = async (id) => {
   const res_colors = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/Colors?key=AIzaSyC3rM7IB5ZQ6zNoY88SaMENJi5mOwmGdqQ`
+    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/Colors?key=AIzaSyBs2hcY3dWMDvLqEPc1Rt1awuEAClMRlsM`
   );
 
-  const data = await res_colors.json()
+  const data = await res_colors.json();
 
   return parseColors(data);
 };
 
 const fetchData = async (id, name) => {
   const res_data = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/${name}?key=AIzaSyC3rM7IB5ZQ6zNoY88SaMENJi5mOwmGdqQ`
+    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/${name}?key=AIzaSyBs2hcY3dWMDvLqEPc1Rt1awuEAClMRlsM`
   );
 
   return await res_data.json();
@@ -146,10 +160,10 @@ const getColorByTeam = (team, colors) => {
   }
 };
 
-const buildProfile= (i,item, colors) => {
+const buildProfile = (i, item, colors) => {
   const profile = document.createElement("div");
-  profile.id = "#profile_"+i
-  profile.onclick = () => openModal(i)
+  profile.id = "#profile_" + i;
+  profile.onclick = () => openModal(i);
   const profileContent = document.createElement("div");
   const profileContentImage = document.createElement("div");
   const profileImage = document.createElement("img");
@@ -161,14 +175,14 @@ const buildProfile= (i,item, colors) => {
   profileAction.className = "profile-action";
   profileAction.innerHTML = `<button><strong>${item["Cargo que busca"]}</strong> <strong>${item.Partido}</strong></button>`;
   profileName.className = "profile-name";
-  profileNameSpan.innerText = `${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}`
+  profileNameSpan.innerText = `${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}`;
   profileImage.src = item.Foto;
   profileContentImage.className = "profile-image";
   profileContent.className = "profile-content";
   profile.className = "dinatar-profile";
-  profileNameSpan.className= 'name'
+  profileNameSpan.className = "name";
 
-  profileName.append(profileNameSpan)
+  profileName.append(profileNameSpan);
   profileContentImage.append(profileImage);
   profileContent.append(profileContentImage);
   profileContent.append(profileName);
@@ -187,7 +201,7 @@ const createProfiles = (filters, data, colors, step_count = true) => {
   containerProfiles.innerHTML = "";
 
   data.forEach((item, i) => {
-    const modal =  document.createElement("div");
+    const modal = document.createElement("div");
     const allsCollections = Object.keys(filters).filter((element) => {
       const { value } = filters[element];
       if (value != "Todos") {
@@ -204,12 +218,12 @@ const createProfiles = (filters, data, colors, step_count = true) => {
     });
 
     if (allsCollections.length == count) {
-      containerProfiles.append(buildProfile(i,item, colors));
+      containerProfiles.append(buildProfile(i, item, colors));
     }
 
     // console.log(item)
-    modal.id = "modal_profile_"+i
-    modal.className = "dinatar-popup "
+    modal.id = "modal_profile_" + i;
+    modal.className = "dinatar-popup ";
     modal.innerHTML = `
       <div class="dinatar__content">
         <div class="header">
@@ -228,39 +242,37 @@ const createProfiles = (filters, data, colors, step_count = true) => {
         </div>
         </div>
         <div class="another-info">
-          <div class="work">${item['Cargo que busca']}</div>
-          <div class="city">${item['Territorio']}</div>
+          <div class="work">${item["Cargo que busca"]}</div>
+          <div class="city">${item["Territorio"]}</div>
           <div class="coavales">
-            <strong>Coavales: </strong> ${item['Coavales']}
+            <strong>Coavales: </strong> ${item["Coavales"]}
           </div>
         </div>
         <p class="dinatar__text">
-          ${item['Perfil']}
+          ${item["Perfil"]}
         </p>
       </div>
-    `
-    dinatar.append(modal)
+    `;
+    dinatar.append(modal);
   });
   containerProfiles.id = "dinatar-container-profiles";
   dinatar.appendChild(containerProfiles);
 };
 
-const on_event = (e, filters, data, colors) =>{
+const on_event = (e, filters, data, colors) => {
   const select_filter = e.target.getAttribute("filter");
   const value = e.target.value;
   filters[select_filter].value = value;
 
   createProfiles(filters, data, colors);
-}
+};
 
 function openModal(id) {
   const modal = document.getElementById(`modal_profile_${id}`);
   modal.classList.add("active");
-  console.log(`modal_profile_${id}`)
 }
 
 function closeModal(id) {
-  console.log(`${id}`)
   const modal = document.getElementById(id);
   modal.classList.remove("active");
 }
@@ -283,7 +295,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let colors = {};
 
   const res_data = await fetchData(id, name, _colors);
-  if(_colors){
+  if (_colors) {
     colors = await fetchColors(id);
   }
 
@@ -295,15 +307,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   createProfiles(filters, data, colors);
 
   const targets = document.querySelectorAll("#select-dinatar");
-  targets.forEach(element => {
-    element.addEventListener("change", (e) => {on_event(e, filters, data, colors)})
+  targets.forEach((element) => {
+    element.addEventListener("change", (e) => {
+      on_event(e, filters, data, colors);
+    });
   });
 
   // document.querySelector("#select-dinatar").addEventListener("change", (e) => {
-    // const select_filter = e.target.getAttribute("filter");
-    // const value = e.target.value;
-    // filters[select_filter].value = value;
+  // const select_filter = e.target.getAttribute("filter");
+  // const value = e.target.value;
+  // filters[select_filter].value = value;
 
-    // createProfiles(filters, data, colors);
+  // createProfiles(filters, data, colors);
   // });
 });
