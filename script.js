@@ -25,7 +25,7 @@ const parseData = (data, only) => {
     new_data[i - 1] = {};
     for (var k = 0; k < values[0].length && k < values[i].length; k++) {
       var key = values[0][k];
-      if(key.length != 0){
+      if (key.length != 0) {
         new_data[i - 1][key] = values[i][k];
       }
     }
@@ -68,11 +68,15 @@ const parseData = (data, only) => {
 };
 
 const parseColors = (data) => {
-  let final = [];
-  data.values.forEach((item) => {
-    final[item[0]] = item[1];
-  });
-  return final;
+  try {
+    let final = [];
+    data.values.forEach((item) => {
+      final[item[0]] = item[1];
+    });
+    return final;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const fetchColors = async (id) => {
@@ -80,7 +84,6 @@ const fetchColors = async (id) => {
     `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/Colors?key=AIzaSyBs2hcY3dWMDvLqEPc1Rt1awuEAClMRlsM`
   );
   // const res_colors = await fetch(`https://dinatar.gabbler.io/colors/${id}`)
-
 
   const data = await res_colors.json();
 
@@ -175,9 +178,17 @@ const buildProfile = (i, item, colors) => {
   const profileNameSpan = document.createElement("span");
   const profileAction = document.createElement("div");
 
+  const cargo_que_busca = item["Cargo que busca"];
+  const partido = item.Partido;
+
+  const parte_1 = `<strong>${item["Cargo que busca"]}</strong>`;
+  const parte_2 = `<strong>${item.Partido}</strong>`;
+
   profileAction.style = getColorByTeam(item.Partido, colors);
   profileAction.className = "profile-action";
-  profileAction.innerHTML = `<button><strong>${item["Cargo que busca"]}</strong> <strong>${item.Partido}</strong></button>`;
+  profileAction.innerHTML = `<button> ${cargo_que_busca ? parte_1 : ""} ${
+    partido ? parte_2 : ""
+  } </button>`;
   profileName.className = "profile-name";
   profileNameSpan.innerText = `${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}`;
   profileImage.src = item.Foto;
@@ -236,7 +247,9 @@ const createProfiles = (filters, data, colors, step_count = true) => {
           </div>
           <div class="info">
             <div>
-              <h3 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${item["Apellido 2"]}</h3>
+              <h3 class="name">${item["Nombres"]} ${item["Apellido 1"]} ${
+      item["Apellido 2"]
+    }</h3>
             </div>
             <button onclick="closeModal('modal_profile_${i}')" class="dinatar-button-close">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -246,11 +259,16 @@ const createProfiles = (filters, data, colors, step_count = true) => {
         </div>
         </div>
         <div class="another-info">
-          <div class="work">${item["Cargo que busca"]}</div>
-          <div class="city">${item["Territorio"]}</div>
-          <div class="coavales">
+          <div class="work">${item["Cargo que busca"] ? item["Cargo que busca"] : ''}</div>
+          <div class="city">${item["Territorio"] ? item["Territorio"] : ''}</div>
+          ${
+            item["Coavales"]
+              ? `<div class="coavales">
             <strong>Coavales: </strong> ${item["Coavales"]}
-          </div>
+          </div>`
+              : ""
+          }
+          
         </div>
         <p class="dinatar__text">
           ${item["Perfil"]}
