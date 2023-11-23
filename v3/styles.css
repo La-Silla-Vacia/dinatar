@@ -1,0 +1,279 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "Martin";
+  src: url("https://dinatar.vercel.app/MARTIN.ttf") format("truetype");
+} */
+
+#dinatar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dinatar-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.88);
+  animation-duration: 0.35s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}
+
+.dinatar-modal__dialog {
+  position: relative;
+  max-width: 500px;
+  padding: 20px;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.dinatar-modal__close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 0;
+  border: none;
+  color: #ccc;
+  background-color: #338bfd;
+  background-image: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.dinatar-modal__close:focus {
+  outline: 0;
+}
+
+.dinatar-modal__header {
+  border-bottom: 1px solid #e2e2e2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dinatar-modal__header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.dinatar-modal__header h3 {
+  margin: 0px;
+  letter-spacing: 0em;
+  font-size: 30px;
+  font-weight: 400;
+  color: rgb(61, 61, 61);
+  font-family: Martin;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.dinatar-modal__header .another-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dinatar-modal__header .another-info span{
+  margin: 4px 0px 0px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Manrope;
+}
+
+.dinatar-modal__title {
+  margin: 0 0 15px;
+}
+
+.dinatar-modal__content {
+  padding: 10px 0;
+  color: #3d3d3d;
+
+  margin: 16px 0px 0px;
+  letter-spacing: 0.00938em;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.dinatar-modal__footer {
+  padding-top: 20px;
+  border-top: 1px solid #e2e2e2;
+  text-align: right;
+}
+
+.dinatar-modal-close-btn{
+  appearance: none;
+  border: 1px solid #338bfd;
+  box-shadow: none;
+  flex: 1;
+  padding: 0 1em;
+  color: #338bfd;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+  min-height: 40px;
+  max-height: 40px;
+}
+
+.dinatar-modal.is-modal-active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-color: inherit;
+}
+
+.dinatar-filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  .dinatar-filters {
+    grid-template-columns: repeat(1, minmax(48%, 1fr));
+  }
+}
+
+.select-dinatar {
+  appearance: none;
+  border: 1px solid #338bfd;
+  box-shadow: none;
+  flex: 1;
+  padding: 0 1em;
+  color: #338bfd;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+  min-height: 40px;
+  max-height: 40px;
+}
+
+.select-dinatar:focus {
+  outline: none;
+}
+
+.dinatar-filter-label {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.dinatar-filter-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#dinatar-container-profiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  #dinatar-container-profiles {
+    grid-template-columns: repeat(1, minmax(50%, 1fr));
+  }
+}
+
+.dinatar-profile {
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+    rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  margin-bottom: 20px;
+  animation-duration: 0.35s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}
+
+.profile-content {
+  padding: 20px 10px 0px 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.profile-content > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50% !important;
+  margin-bottom: 10px;
+}
+
+.dinatar-profile .dinatar-profile-name {
+  font-weight: bold !important;
+  font-size: 18px !important;
+  font-family: "Manrope", sans-serif !important;
+  text-align: start;
+  color: #3d3d3d;
+  margin-bottom: 10px;
+}
+
+.dinatar-profile .dinatar-profile-footer {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #338bfd;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.dinatar-profile .dinatar-profile-footer .profile-footer__item__one,
+.profile-footer__item__two {
+  font-family: "Manrope" !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02857em !important;
+  /* text-transform: uppercase !important; */
+  color: #fff !important;
+  font-size: 18px !important;
+  /* line-height: normal !important; */
+  text-align: start;
+}

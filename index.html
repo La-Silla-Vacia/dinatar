@@ -1,37 +1,121 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/styles/form-build.css" />
+    <!-- <link rel="stylesheet" href="/v3/styles.css"> -->
+    <script
+      src="https://c0.wp.com/c/6.4.1/wp-includes/js/jquery/jquery.min.js"
+      id="jquery-core-js"
+    ></script>
+    <script
+      src="https://c0.wp.com/c/6.4.1/wp-includes/js/jquery/jquery-migrate.min.js"
+      id="jquery-migrate-js"
+    ></script>
+
+    <script src="/dinatar-2.js"></script>
   </head>
   <body>
-    <div id="dinatar"></div>
-    <script src="./script.js"></script>
-    <!-- <style>@import url("/style.css");</style> -->
+    <div class="demo-page">
+      <main class="demo-page-content">
+        <section>
+          <h1>Dinatar Settings</h1>
+          <p>
+            Este formulario te ayudara a construir el tarjeton que necesites
+          </p>
 
-    <script>
-      const id = "1aICWUf612_9crCvl4-sm_iSxUXvcucaobvh2XBxsYMU";
-      const name = "Data";
-      const with_colors = true;
-      const filters_options = ["Region", "Sector"];
-    </script>
+          <div class="nice-form-group">
+            <label
+              >Url de Google SpreedSheet (Es necesario que este publico)</label
+            >
+            <input
+              type="text"
+              placeholder="https://docs.google.com/spreadsheets/d/1vXFaxmiPvyv2FbH2gUFmIAKjlwFyyNe9AFdDsewM5xo/edit"
+              value=""
+              spellcheck="false"
+              id="url"
+              data-ms-editor="true"
+            />
+          </div>
+          <div class="nice-form-group">
+            <label>Nombre de la hoja de calculo (Por ejemplo: Hoja 1)</label>
+            <input
+              type="text"
+              placeholder="Hoja 1"
+              value=""
+              spellcheck="false"
+              id="sheet"
+              data-ms-editor="true"
+            />
+          </div>
+          <div class="nice-form-group">
+            <label
+              >Con Colores? (Para usar esto, debe existir una hoja llamada
+              colors con las columnas: name y value )</label
+            >
+            <input
+              type="checkbox"
+              value=""
+              spellcheck="false"
+              id="withColors"
+              data-ms-editor="true"
+            />
+          </div>
+          <div class="nice-form-group">
+            <label
+              >Filtros (Puedes añadir multiples filtros separandolos con una
+              coma "," )</label
+            >
+            <input
+              type="text"
+              placeholder="Es heredero,Es polémico"
+              value=""
+              spellcheck="false"
+              id="filtersOptions"
+              data-ms-editor="true"
+            />
+          </div>
+          <div class="nice-form-group">
+            <label
+              >Filtrar datos (filtra los datos que quieres mostrar indicando la
+              columna y el valor separados por dos puntos ":", separalos con una
+              coma para agregar multiples)</label
+            >
+            <input
+              type="text"
+              placeholder="Cargo ficha tarjetón:Concejo de Bogotá,Estos son:Sí"
+              value=""
+              spellcheck="false"
+              id="getOnly"
+              data-ms-editor="true"
+            />
+          </div>
 
-    <!-- <script>
-      const id = "1vXFaxmiPvyv2FbH2gUFmIAKjlwFyyNe9AFdDsewM5xo";
-      const name = "Candidatos";
-      const with_colors = true;
-      const filters_options = [
-        "Posición frente al Gobierno Petro",
-        "Nivel de estudios",
-        "Sector del que viene",
-        "Voto segunda vuelta 2022",
-        "Líos o cuestionamientos",
-        "Ha ocupado un cargo público",
-      ];
+          <button id="generator-button" onclick="generate()">Generar</button>
+        </section>
 
-      const get_only = ["Ciudad:Bogotá", "Cargo que busca:Alcaldía"];
-    </script> -->
+        <div class="show-code">
+          <code id="code">hola</code>
+        </div>
+        <footer>Made with ♥</footer>
+      </main>
+
+      <div class="demo-page-navigation">
+        <div id="dinatar"></div>
+      </div>
+
+      <script
+        src="./v3/script.js"
+        data-identity="dinatar-script"
+        data-id="1vXFaxmiPvyv2FbH2gUFmIAKjlwFyyNe9AFdDsewM5xo"
+        data-name="Candidatos"
+        data-withColors="true"
+        data-filtersOptions='["Posición frente al Gobierno Petro","Género","LGBTIQ+","¿Pertenece a una comunidad étnica, raizal o indígena?","Ha ocupado un cargo público","Es heredero","Es polémico"]'
+        data-getOnly="Cargo ficha tarjetón:Concejo de Bogotá,Estos son:Sí"
+      ></script>
+
+    </div>
   </body>
 </html>

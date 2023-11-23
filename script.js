@@ -81,7 +81,7 @@ const parseColors = (data) => {
 
 const fetchColors = async (id) => {
   const res_colors = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/Colors?key=AIzaSyBs2hcY3dWMDvLqEPc1Rt1awuEAClMRlsM`
+    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/Colors?key=AIzaSyD476egRKXU8tY8HD2z55SuXYdjCplBENI`
   );
   // const res_colors = await fetch(`https://dinatar.gabbler.io/colors/${id}`)
 
@@ -92,7 +92,7 @@ const fetchColors = async (id) => {
 
 const fetchData = async (id, name) => {
   const res_data = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/${name}?key=AIzaSyBs2hcY3dWMDvLqEPc1Rt1awuEAClMRlsM`
+    `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/${name}?key=AIzaSyD476egRKXU8tY8HD2z55SuXYdjCplBENI`
   );
 
   // const res_data = await fetch(`https://dinatar.gabbler.io/sheets/${name}/${id}`)
